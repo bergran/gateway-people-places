@@ -6,9 +6,9 @@ response with places with him people (not deleted)
 
 ### Diagram
  
-![Diagram](./place%20diagram.png)
+![Diagram](./gateway%20diagram.png)
 
-### Before run
+### Before Up
 
 App is ready to deploy it with some resources before app is up.
 
@@ -19,20 +19,16 @@ Proccess to up app is the next:
 - Generate dummy data.
 - Run app
 
-Now, you should know that you has the power to set database credentials and number of 
-elements that will create to start to make request
+Now, you should know that you has the power to set RESOURCE_ORIGIN origin, PLACES_MICROSERVICES and
+PEOPLE_MICROSERVICES address services
 
 Environment variables
 
 ```bash
-      DATABASE: Database name
-      USERNAME: Database user
-      PASSWORD: Database password
-      HOST: Database address
-      Port: Database port
-      RESOURCE_ORIGIN_DUMMY_DATA: Place model has a property to notify some microservice to some place. This will be 
+      RESOURCE_ORIGIN: Place model has a property to notify some microservice to some place. This will be 
       the origin which it will create dummy data
-      RESOURCE_NUMBER_ELEMENTS: Number of elements to create at start. It's a simple loop to create places
+      PLACES_MICROSERVICES: Place address service
+      PEOPLE_MICROSERVICES: People address service
 ```
 
 ### How to deploy it?

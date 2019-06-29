@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  gateway:
+    container_name: gateway-app
+    image: python:3.7.3-stretch
+    working_dir: /code
+    environment:
+      PYTHONPATH: /code
+      RESOURCE_ORIGIN: http://gateway:8000
+      PLACES_MICROSERVICES: http://places:8000/api/v1
+      PEOPLE_MICROSERVICES: http://people:8000/api/v1
+    ports:
+      - 8000:8000
+    networks:
+      - microservices
+    volumes:
+      - ../:/code
+    command: sh deployments/run.sh
+
+networks:
+  microservices:
+    external:
+      name: microservice
